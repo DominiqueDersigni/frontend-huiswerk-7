@@ -89,10 +89,39 @@ console.log(sum / grades.length);
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
+function averageGrade(grades){
+    let sum = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        sum = sum + grades[i];
+    }
+    return sum / grades.length;
+}
+
+console.log(averageGrade(grades));
+console.log(averageGrade([6, 4, 5]));
+console.log(averageGrade([8, 9, 4, 6, 10]));
+
+
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
+
+function averageGradeTwoDecimals(grades){
+    let sum = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        sum = sum + grades[i];
+    }
+    return (sum / grades.length).toFixed(2);
+}
+
+console.log(averageGradeTwoDecimals(grades));
+console.log(averageGradeTwoDecimals([6, 4, 5]));
+console.log(averageGradeTwoDecimals([8, 9, 4, 6, 10]));
+
+
 
 
 
@@ -108,6 +137,15 @@ console.log(sum / grades.length);
 
 // ---- Verwachte uitkomst: 9
 
+let highest = 0;
+
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] > highest) {
+        highest = grades[i];
+    }
+}
+
+console.log(highest);
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
@@ -118,3 +156,19 @@ console.log(sum / grades.length);
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(grades)
+{
+    let highest = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] > highest) {
+            highest = grades[i];
+        }
+    }
+    return highest;
+}
+
+console.log(highestGrade(grades));
+console.log(highestGrade([6, 4, 5]));
+console.log(highestGrade([8, 9, 4, 6, 10]));
